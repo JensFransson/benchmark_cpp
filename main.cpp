@@ -34,7 +34,7 @@ auto generate_random_alphanumeric_string(std::size_t len) -> std::string {
 
 
 int main() {
-    int size = 10000000;
+    int size = 5000000;
     int len = 36;
 
     std::cout << "Generating a list of " << size << " random strings of length " << len << " each ..." << std::endl;
@@ -51,7 +51,7 @@ int main() {
 
     auto microseconds_generate = std::chrono::duration_cast<std::chrono::microseconds>(finish_generate - start_generate);
     std::cout << "Generation time: " << microseconds_generate.count() << " microseconds\n";
-    std::cout << "First list element: " << randomList.at(0) << "\n\n";
+    std::cout << "First list element: '" << randomList.at(0) << "'\n\n";
 
     std::cout << "Sorting the list of " << size << " random strings ..." << std::endl;
 
@@ -62,6 +62,8 @@ int main() {
     auto finish = std::chrono::high_resolution_clock::now();
 
     auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish - start);
+    std::cout << "Sorted list size: " << randomList.size() << "\n";
+    std::cout << "First element of sorted list: '" << randomList.at(0) << "'\n";
     std::cout << "Sort time: " << microseconds.count() << " microseconds\n";
 
     return 0;
