@@ -50,21 +50,21 @@ int main() {
     auto finish_generate = std::chrono::high_resolution_clock::now();
 
     auto microseconds_generate = std::chrono::duration_cast<std::chrono::microseconds>(finish_generate - start_generate);
-    std::cout << "Generation time: " << microseconds_generate.count() << " microseconds\n";
+    std::cout << "Generation duration: " << microseconds_generate.count() << " microseconds\n";
     std::cout << "First list element: '" << randomList.at(0) << "'\n\n";
 
     std::cout << "Sorting the list of " << size << " random strings ..." << std::endl;
 
-    auto start = std::chrono::high_resolution_clock::now();
+    auto start_sort = std::chrono::high_resolution_clock::now();
 
     std::sort(randomList.begin(), randomList.end());
 
-    auto finish = std::chrono::high_resolution_clock::now();
+    auto finish_sort = std::chrono::high_resolution_clock::now();
 
-    auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish - start);
+    auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish_sort - start_sort);
     std::cout << "Sorted list size: " << randomList.size() << "\n";
     std::cout << "First element of sorted list: '" << randomList.at(0) << "'\n";
-    std::cout << "Sort time: " << microseconds.count() << " microseconds\n";
+    std::cout << "Sort duration: " << microseconds.count() << " microseconds\n";
 
     return 0;
 }
